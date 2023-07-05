@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/Home";
+import AboutPage from "./pages/About";
+import AccountPage from "./pages/Account";
+import CoinDetailsPage from "./pages/CoinDetails";
+import CookiePreferencesPage from "./pages/CookiePreferences";
+import DisclaimerPage from "./pages/Disclaimer";
+import PrivacyPolicyPage from "./pages/PrivacyPolicy";
+import TermsOfUsePage from "./pages/TermsOfUse";
+import MissingPage from "./pages/MissingPage";
 
-function App() {
+export interface IApplicationProps {}
+
+const App: React.FunctionComponent<IApplicationProps> = (props) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />}></Route>
+        <Route path="/about" element={<AboutPage />}></Route>
+        <Route path="/account" element={<AccountPage />}></Route>
+        <Route path="/coin/:token" element={<CoinDetailsPage />}></Route>
+        <Route path="/cookie" element={<CookiePreferencesPage />}></Route>
+        <Route path="/disclaimer" element={<DisclaimerPage />}></Route>
+        <Route path="/privacy" element={<PrivacyPolicyPage />}></Route>
+        <Route path="/terms" element={<TermsOfUsePage />}></Route>
+        <Route path="*" element={<MissingPage />}></Route>
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
