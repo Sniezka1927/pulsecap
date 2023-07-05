@@ -1,13 +1,15 @@
 import React from "react";
-import Container from "@mui/material/Container";
+import Cont from "../../UI/Container";
+import Highlights from "../Highlights/Highlights";
 
 type Props = {};
 
 function Promotions(props: Props) {
   return (
-    <Container maxWidth="xl">
+    <Cont>
       <h1>Promoted Tokens</h1>
-    </Container>
+      <Highlights />
+    </Cont>
   );
 }
 

@@ -1,12 +1,14 @@
-import React from "react";
-import Container from "@mui/material/Container";
+import React, { useEffect, useState } from "react";
+import Cont from "../../UI/Container";
+import Tokens from "./Tokens";
 type Props = {};
 
 const Cryptocurrencies = (props: Props) => {
   return (
-    <Container maxWidth="xl">
+    <Cont>
       <h1>Listed Tokens</h1>
-    </Container>
+      <Tokens />
+    </Cont>
   );
 };
 

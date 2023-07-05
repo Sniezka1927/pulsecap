@@ -1,10 +1,10 @@
 import React from "react";
-import Container from "@mui/material/Container";
 import Paper from "@mui/material/Paper";
 import Stack from "@mui/material/Stack";
 import { styled } from "@mui/material/styles";
-
-type Props = {};
+import PeopleTokenHighlights from "./Highlighted/People";
+import Cont from "../../UI/Container";
+import styles from "./Highlights.module.scss";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -12,22 +12,45 @@ const Item = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(1),
   textAlign: "center",
   color: theme.palette.text.secondary,
+  boxShadow: "none",
 }));
+
+type Props = {};
 
 const Highlights = (props: Props) => {
   return (
-    <Container maxWidth="xl">
+    <Cont>
       <Stack
         direction="row"
         justifyContent="space-evenly"
         alignItems="center"
-        spacing={4}
+        spacing={2}
+        useFlexGap
+        flexWrap="wrap"
       >
-        <Item>Item 1</Item>
-        <Item>Item 2</Item>
-        <Item>Item 3</Item>
+        <Item className={styles.singleItem}>
+          <PeopleTokenHighlights />
+          <PeopleTokenHighlights />
+          <PeopleTokenHighlights />
+          <PeopleTokenHighlights />
+          <PeopleTokenHighlights />
+        </Item>
+        <Item>
+          <PeopleTokenHighlights />
+          <PeopleTokenHighlights />
+          <PeopleTokenHighlights />
+          <PeopleTokenHighlights />
+          <PeopleTokenHighlights />
+        </Item>
+        <Item>
+          <PeopleTokenHighlights />
+          <PeopleTokenHighlights />
+          <PeopleTokenHighlights />
+          <PeopleTokenHighlights />
+          <PeopleTokenHighlights />
+        </Item>
       </Stack>
-    </Container>
+    </Cont>
   );
 };
 
