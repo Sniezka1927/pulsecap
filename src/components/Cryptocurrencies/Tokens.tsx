@@ -1,4 +1,3 @@
-import Paper from "@mui/material/Paper";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -9,7 +8,8 @@ import TableRow from "@mui/material/TableRow";
 import Cont from "../../UI/Container";
 import React, { useEffect, useState } from "react";
 import Pair from "../../interfaces/Pair";
-
+import Token from "./Token";
+import styles from "./Tokens.module.scss";
 interface Column {
   id: number;
   label: string;
@@ -57,12 +57,12 @@ const columns: readonly Column[] = [
     // minWidth: 170,
     align: "center",
   },
-  //   {
-  //     id: 8,
-  //     label: "Circulating Supply",
-  //     // minWidth: 170,
-  //     align: "right",
-  //   },
+  {
+    id: 8,
+    label: "Circulating Supply",
+    // minWidth: 170,
+    align: "center",
+  },
   {
     id: 9,
     label: "Listing Date",
@@ -99,19 +99,20 @@ export default function StickyHeadTable() {
     setPage(0);
   };
 
-  console.log(token);
-
   return (
     <Cont>
-      <TableContainer sx={{ maxHeight: 440 }}>
+      <TableContainer className={styles.tokens}>
         <Table stickyHeader aria-label="sticky table">
-          <TableHead>
+          <TableHead style={{ backgroundColor: "#f7f5f5" }}>
             <TableRow>
               {columns.map((column) => (
                 <TableCell
                   key={column.id}
                   align={column.align}
-                  style={{ minWidth: column.minWidth }}
+                  style={{
+                    minWidth: column.minWidth,
+                    backgroundColor: "#f7f5f5",
+                  }}
                 >
                   {column.label}
                 </TableCell>
@@ -137,34 +138,28 @@ export default function StickyHeadTable() {
                   </TableRow>
                 );
               })} */}
-            {token !== undefined ? (
-              <TableRow hover role="checkbox" tabIndex={-1} key={0}>
-                <TableCell align={"center"}>0</TableCell>
-                <TableCell align={"center"}>{token.baseToken.name}</TableCell>
-                <TableCell align={"center"}>{token.priceUsd}$</TableCell>
-                <TableCell align={"center"}>{token.priceChange.h1}%</TableCell>
-                <TableCell align={"center"}>{token.priceChange.h6}%</TableCell>
-                <TableCell align={"center"}>{token.priceChange.h24}%</TableCell>
-                <TableCell align={"center"}>{token.volume.h24}</TableCell>
-                {/* <TableCell></TableCell>
-                <TableCell></TableCell> */}
-                <TableCell align={"center"}>
-                  {new Date(token.pairCreatedAt).toLocaleDateString()}
-                </TableCell>
-              </TableRow>
-            ) : null}
+            {token !== undefined ? <Token token={token} /> : null}
+            {token !== undefined ? <Token token={token} /> : null}
+            {token !== undefined ? <Token token={token} /> : null}
+            {token !== undefined ? <Token token={token} /> : null}
+            {token !== undefined ? <Token token={token} /> : null}
+            {token !== undefined ? <Token token={token} /> : null}
+            {token !== undefined ? <Token token={token} /> : null}
+            {token !== undefined ? <Token token={token} /> : null}
+            {token !== undefined ? <Token token={token} /> : null}
+            {token !== undefined ? <Token token={token} /> : null}
           </TableBody>
         </Table>
       </TableContainer>
-      {/* <TablePagination
+      <TablePagination
         rowsPerPageOptions={[10, 25, 100]}
         component="div"
-        count={rows.length}
+        count={200}
         rowsPerPage={rowsPerPage}
         page={page}
         onPageChange={handleChangePage}
         onRowsPerPageChange={handleChangeRowsPerPage}
-      /> */}
+      />
     </Cont>
   );
 }

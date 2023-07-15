@@ -1,0 +1,10 @@
+@use "../../styles/_colors.scss" as colors;
+.background {
+  background: colors.$gradient;
+}
+
+.logo {
+  width: auto;
+  height: 48px;
+  padding: 1em;
+}

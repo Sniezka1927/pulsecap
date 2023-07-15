@@ -1,0 +1,12 @@
+@use "../../styles/colors" as colors;
+.title {
+  background: -webkit-linear-gradient(
+    -180deg,
+    colors.$red,
+    colors.$violet,
+    colors.$blue,
+    colors.$lightBlue
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

@@ -14,13 +14,9 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { styled, alpha } from "@mui/material/styles";
 import InputBase from "@mui/material/InputBase";
-import Badge from "@mui/material/Badge";
 import SearchIcon from "@mui/icons-material/Search";
-import AccountCircle from "@mui/icons-material/AccountCircle";
-import MailIcon from "@mui/icons-material/Mail";
-import NotificationsIcon from "@mui/icons-material/Notifications";
-import MoreIcon from "@mui/icons-material/MoreVert";
-
+import styles from "./Navbar.module.scss";
+import logo from "../../assets/logo.png";
 const pages = ["Cryptocurrencies", "Categories", "About"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
@@ -88,10 +84,10 @@ const Navbar = (props: Props) => {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" className={styles.background}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          <img src={logo} alt="Pulse Chain Explorer" className={styles.logo} />
           <Typography
             variant="h6"
             noWrap

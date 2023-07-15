@@ -1,0 +1,57 @@
+@use "../../styles/_colors.scss" as colors;
+// .red {
+//   //   border-color: colors.$red;
+//   border-color: none;
+// }
+// .violet {
+//   //   border-color: colors.$violet;
+//   border-color: none;
+// }
+// .blue {
+//   //   border-color: colors.$blue;
+//   border-color: none;
+// }
+
+// .lightBlue {
+//   //   border-color: colors.$lightBlue;
+//   border-color: none;
+// }
+
+.row {
+  border-bottom-width: 10px;
+  //   border-width: 4px;
+  border-style: solid;
+  border-image: linear-gradient(
+      to right,
+      colors.$red,
+      colors.$violet,
+      colors.$blue,
+      colors.$lightBlue
+    )
+    1;
+}
+.tokens {
+  //   border-width: 4px;
+  //   border-style: solid;
+  // border-image: linear-gradient(
+  //     to right,
+  //     colors.$red,
+  //     colors.$violet,
+  //     colors.$blue,
+  //     colors.$lightBlue
+  //   )
+  //     1;
+  //   border-radius: 25px;
+
+  background: linear-gradient(colors.$body, colors.$body) padding-box,
+    linear-gradient(
+        45deg,
+        colors.$red,
+        colors.$violet,
+        colors.$blue,
+        colors.$lightBlue
+      )
+      border-box;
+  border-radius: 25px;
+  border: 3px solid transparent;
+}

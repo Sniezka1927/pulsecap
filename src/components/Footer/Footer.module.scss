@@ -1,0 +1,12 @@
+@use "../../styles/colors" as colors;
+.background {
+  background: colors.$gradient;
+  padding: 1em;
+  margin-top: 2em;
+  color: colors.$white !important;
+}
+
+.telegram,
+.twitter {
+  color: colors.$blue;
+}

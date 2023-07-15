@@ -1,9 +1,10 @@
 import React from "react";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
+import { JSX } from "react/jsx-runtime";
 
 type Props = {
-  children?: JSX.Element | JSX.Element[];
+  children?: JSX.Element | JSX.Element[] | React.ReactNode[];
 };
 
 const Cont = (props: Props) => {
