@@ -10,7 +10,7 @@ type Props = {
 const Cont = (props: Props) => {
   return (
     <Container maxWidth="xl">
-      <Box sx={{ m: 0 }}>{props.children}</Box>
+      <Box sx={{ m: 1.5 }}>{props.children}</Box>
     </Container>
   );
 };

@@ -1,12 +1,30 @@
 @use "../../styles/colors" as colors;
 .background {
-  background: colors.$gradient;
   padding: 1em;
   margin-top: 2em;
-  color: colors.$white !important;
+  color: colors.$blue !important;
+  background: linear-gradient(colors.$white, colors.$white) padding-box,
+    linear-gradient(
+        45deg,
+        colors.$red,
+        colors.$violet,
+        colors.$blue,
+        colors.$lightBlue
+      )
+      border-box;
+  // border-radius: 25px;
+  border-top: 3px solid transparent;
 }
 
 .telegram,
 .twitter {
   color: colors.$blue;
+}
+
+.link {
+  color: colors.$blue !important;
+  text-decoration: none !important;
+}
+.link:hover {
+  color: colors.$lightBlue !important;
 }

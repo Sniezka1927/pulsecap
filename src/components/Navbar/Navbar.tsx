@@ -16,8 +16,9 @@ import { styled, alpha } from "@mui/material/styles";
 import InputBase from "@mui/material/InputBase";
 import SearchIcon from "@mui/icons-material/Search";
 import styles from "./Navbar.module.scss";
-import logo from "../../assets/logo.png";
-const pages = ["Cryptocurrencies", "Categories", "About"];
+import Logo from "../Logo/Logo";
+import { Link } from "react-router-dom";
+const pages = ["Add Listing", "Promote", "Categories", "About"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const SearchIconWrapper = styled("div")(({ theme }) => ({
@@ -84,10 +85,10 @@ const Navbar = (props: Props) => {
   };
 
   return (
-    <AppBar position="static" className={styles.background}>
+    <AppBar position="static" className={styles.navbar}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <img src={logo} alt="Pulse Chain Explorer" className={styles.logo} />
+          <Logo />
           <Typography
             variant="h6"
             noWrap
@@ -137,12 +138,16 @@ const Navbar = (props: Props) => {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Link to={`${page}`}>
+                    <Typography textAlign="center" className={styles.item}>
+                      {page}
+                    </Typography>
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+          {/* <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} /> */}
           <Typography
             variant="h5"
             noWrap
@@ -164,9 +169,15 @@ const Navbar = (props: Props) => {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{ my: 1, display: "block" }}
+                className={styles.item}
               >
-                {page}
+                <Link
+                  to={`/${page.replace(" ", "-").toLowerCase()}`}
+                  className={styles.link}
+                >
+                  {page}
+                </Link>
               </Button>
             ))}
           </Box>
@@ -182,7 +193,11 @@ const Navbar = (props: Props) => {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <Avatar
+                  alt="S"
+                  src="/static/images/avatar/2.jpg"
+                  className={styles.background}
+                />
               </IconButton>
             </Tooltip>
             <Menu

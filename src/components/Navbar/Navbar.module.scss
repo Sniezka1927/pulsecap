@@ -3,8 +3,24 @@
   background: colors.$gradient;
 }
 
-.logo {
-  width: auto;
-  height: 48px;
-  padding: 1em;
+.navbar {
+  background: linear-gradient(colors.$white, colors.$white) padding-box,
+    linear-gradient(
+        45deg,
+        colors.$red,
+        colors.$violet,
+        colors.$blue,
+        colors.$lightBlue
+      )
+      border-box;
+  // border-radius: 25px;
+  border-bottom: 3px solid transparent;
+  color: colors.$lightBlue !important;
+}
+
+.item,
+.link,
+.link:hover {
+  color: colors.$lightBlue !important;
+  text-decoration: none !important;
 }

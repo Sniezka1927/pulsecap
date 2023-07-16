@@ -7,14 +7,25 @@ import TableHead from "@mui/material/TableHead";
 import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
 import styles from "./Tokens.module.scss";
+import { useNavigate } from "react-router-dom";
 type Props = {
   token: Pair;
 };
 
 const Token = (props: Props) => {
   const token = props.token;
+  const navigate = useNavigate();
+  const redirectHandler = () => {
+    navigate("/coin/asd");
+  };
   return (
-    <TableRow hover tabIndex={-1} key={0} className={styles.row}>
+    <TableRow
+      hover
+      tabIndex={-1}
+      key={0}
+      className={styles.row}
+      onClick={redirectHandler}
+    >
       <TableCell align={"center"}>0</TableCell>
       <TableCell align={"center"}>{token.baseToken.name}</TableCell>
       <TableCell align={"center"}>{token.priceUsd}$</TableCell>

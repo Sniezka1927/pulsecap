@@ -1,0 +1,109 @@
+@use "../../styles/table" as table;
+@use "../../styles/colors" as colors;
+.table {
+  width: table.$table-width;
+  overflow-x: scroll;
+  max-width: 100vw;
+}
+
+.priceChange {
+  padding: 10px;
+  margin-top: 10px;
+  background-color: colors.$green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 125%;
+  font-weight: bolder;
+  border-radius: 15px;
+  width: 70%;
+  height: 50%;
+}
+@media only screen and (max-width: 768px) {
+  .priceChange {
+    margin-top: -10px;
+    width: 100%;
+    padding: 10px 20px;
+    // color: red;
+  }
+}
+
+.priceState {
+  font-size: 125%;
+  font-weight: bolder;
+}
+
+.rankState {
+  background-color: colors.$gray;
+  width: fit-content;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 90%;
+  font-weight: bolder;
+}
+
+.redirectContainer {
+  margin-top: 15px;
+}
+
+.redirect {
+  background: colors.$gray;
+  color: colors.$black;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  padding: 5px 8px;
+  margin: 0px 0px 4px;
+  margin-inline-end: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 18px;
+  display: flex;
+  text-decoration: none;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.icon {
+  width: 15px !important;
+  height: auto;
+  padding-right: 3px;
+}
+
+.usdContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+.usdIcon {
+  width: 50px !important;
+  height: auto;
+}
+
+.commentContainer {
+  max-height: 400px;
+  overflow-y: scroll;
+}
+
+.author {
+  background: -webkit-linear-gradient(
+    -180deg,
+    colors.$red,
+    colors.$violet,
+    colors.$blue,
+    colors.$lightBlue
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 125%;
+}
+
+.comment {
+  border-bottom: 1px solid colors.$body;
+  padding-bottom: 3px;
+  margin-bottom: 3px;
+}

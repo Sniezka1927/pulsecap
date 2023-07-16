@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Cont from "../../UI/Container";
+import Cont from "../UI/Container";
 import Tokens from "./Tokens";
 import Title from "../UI/Title";
 type Props = {};

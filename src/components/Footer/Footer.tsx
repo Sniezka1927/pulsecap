@@ -5,6 +5,7 @@ import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import { Telegram, Twitter } from "@mui/icons-material";
 import { Box } from "@mui/material";
+import Logo from "../Logo/Logo";
 import styles from "./Footer.module.scss";
 type Props = {};
 
@@ -14,33 +15,67 @@ const Foter = (props: Props) => {
       <Container maxWidth="lg">
         <Grid container spacing={0}>
           <Grid item xs={12} sm={5}>
-            <Typography variant="h6" gutterBottom>
-              Logo
-            </Typography>
+            <Logo />
           </Grid>
           <Grid item xs={12} sm={2}>
             <Typography variant="h6" gutterBottom>
               Products
             </Typography>
-            <Typography variant="body2">The $PEOPLE</Typography>
+            <Typography variant="body2">
+              <Link href="/" className={styles.link}>
+                The $PEOPLE
+              </Link>
+            </Typography>
           </Grid>
           <Grid item xs={12} sm={2}>
             <Typography variant="h6" gutterBottom>
               Company
             </Typography>
-            <Typography variant="body2">About us</Typography>
-            <Typography variant="body2">Terms of use</Typography>
-            <Typography variant="body2">Privacy policy</Typography>
-            <Typography variant="body2">Cookie preferences</Typography>
-            <Typography variant="body2">Disclaimer</Typography>
+            <Typography variant="body2">
+              <Link href="/" className={styles.link}>
+                About us{" "}
+              </Link>
+            </Typography>
+            <Typography variant="body2">
+              <Link href="/" className={styles.link}>
+                Terms of use
+              </Link>
+            </Typography>
+            <Typography variant="body2">
+              <Link href="/" className={styles.link}>
+                Privacy policy
+              </Link>
+            </Typography>
+            <Typography variant="body2">
+              <Link href="/" className={styles.link}>
+                Cookie preferences
+              </Link>
+            </Typography>
+            <Typography variant="body2">
+              <Link href="/" className={styles.link}>
+                Disclaimer
+              </Link>
+            </Typography>
           </Grid>
           <Grid item xs={12} sm={2}>
             <Typography variant="h6" gutterBottom>
               Support
             </Typography>
-            <Typography variant="body2">Request form</Typography>
-            <Typography variant="body2">Contact support</Typography>
-            <Typography variant="body2">FAQ</Typography>
+            <Typography variant="body2">
+              <Link href="/" className={styles.link}>
+                Request form
+              </Link>
+            </Typography>
+            <Typography variant="body2">
+              <Link href="/" className={styles.link}>
+                Contact support
+              </Link>
+            </Typography>
+            <Typography variant="body2">
+              <Link href="/" className={styles.link}>
+                FAQ
+              </Link>
+            </Typography>
           </Grid>
           <Grid item xs={12} sm={1}>
             <Typography variant="h6" gutterBottom>
