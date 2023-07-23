@@ -1,11 +1,8 @@
 import React from "react";
 import Pair from "../../interfaces/Pair";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TablePagination from "@mui/material/TablePagination";
-import TableRow from "@mui/material/TableRow";
+import { TableRow, TableCell } from "@mui/material";
+import StarIcon from "@mui/icons-material/Star";
+import StarBorderIcon from "@mui/icons-material/StarBorder";
 import styles from "./Tokens.module.scss";
 import { useNavigate } from "react-router-dom";
 type Props = {
@@ -26,14 +23,20 @@ const Token = (props: Props) => {
       className={styles.row}
       onClick={redirectHandler}
     >
-      <TableCell align={"center"}>0</TableCell>
+      <TableCell align={"center"}>
+        <StarIcon color="warning" />
+        {/* <StarBorderIcon /> */}
+      </TableCell>
+      {/* <TableCell align={"center"}>0</TableCell> */}
       <TableCell align={"center"}>{token.baseToken.name}</TableCell>
       <TableCell align={"center"}>{token.priceUsd}$</TableCell>
       <TableCell align={"center"}>{token.priceChange.h1}%</TableCell>
       <TableCell align={"center"}>{token.priceChange.h6}%</TableCell>
       <TableCell align={"center"}>{token.priceChange.h24}%</TableCell>
       <TableCell align={"center"}>{token.volume.h24}</TableCell>
-      <TableCell></TableCell>
+      <TableCell align={"center"}>N/A</TableCell>
+      <TableCell align={"center"}>N/A</TableCell>
+
       <TableCell align={"center"}>
         {new Date(token.pairCreatedAt).toLocaleDateString()}
       </TableCell>

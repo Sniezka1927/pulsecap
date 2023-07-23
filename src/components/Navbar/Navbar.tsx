@@ -18,8 +18,8 @@ import SearchIcon from "@mui/icons-material/Search";
 import styles from "./Navbar.module.scss";
 import Logo from "../Logo/Logo";
 import { Link } from "react-router-dom";
-const pages = ["Add Listing", "Promote", "Categories", "About"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const pages = ["Add Listing", "Promote", "About"];
+const settings = ["Watchlist", "Portfolio", "Settings", "Logout"];
 
 const SearchIconWrapper = styled("div")(({ theme }) => ({
   padding: theme.spacing(0, 2),
@@ -218,7 +218,12 @@ const Navbar = (props: Props) => {
             >
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+                  <Link
+                    to={`/user/${setting.toLowerCase()}`}
+                    className={styles.link}
+                  >
+                    <Typography textAlign="center">{setting}</Typography>
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>

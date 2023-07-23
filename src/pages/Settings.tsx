@@ -1,17 +1,17 @@
 import React from "react";
 import Navbar from "../components/Navbar/Navbar";
-import About from "../components/About/About";
 import Footer from "../components/Footer/Footer";
+import Settings from "../components/User/Settings/Settings";
 type Props = {};
 
-const AboutPage = (props: Props) => {
+const SettingsPage = (props: Props) => {
   return (
     <React.Fragment>
       <Navbar />
-      <About />
+      <Settings />
       <Footer />
     </React.Fragment>
   );
 };
 
-export default AboutPage;
+export default SettingsPage;

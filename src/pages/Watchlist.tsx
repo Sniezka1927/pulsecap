@@ -1,17 +1,17 @@
 import React from "react";
 import Navbar from "../components/Navbar/Navbar";
-import About from "../components/About/About";
 import Footer from "../components/Footer/Footer";
+import Watchlist from "../components/User/Watchlist/Watchlist";
 type Props = {};
 
-const AboutPage = (props: Props) => {
+const WatchlistPage = (props: Props) => {
   return (
     <React.Fragment>
       <Navbar />
-      <About />
+      <Watchlist />
       <Footer />
     </React.Fragment>
   );
 };
 
-export default AboutPage;
+export default WatchlistPage;

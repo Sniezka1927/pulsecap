@@ -1,15 +1,18 @@
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TablePagination from "@mui/material/TablePagination";
-import TableRow from "@mui/material/TableRow";
 import Cont from "../UI/Container";
 import React, { useEffect, useState } from "react";
 import Pair from "../../interfaces/Pair";
 import Token from "./Token";
 import styles from "./Tokens.module.scss";
+import {
+  TableRow,
+  TablePagination,
+  TableHead,
+  TableContainer,
+  TableCell,
+  Table,
+  TableBody,
+} from "@mui/material";
+
 interface Column {
   id: number;
   label: string;
@@ -19,52 +22,47 @@ interface Column {
 }
 
 const columns: readonly Column[] = [
-  { id: 0, label: "#", align: "center" }, // minWidth: 170
-  { id: 1, label: "Name", align: "center" }, // minWidth: 100
+  { id: 15, label: "#", align: "center" }, // minWidth: 170
+  { id: 0, label: "Name", align: "center" }, // minWidth: 170
+  { id: 1, label: "Price", align: "center" }, // minWidth: 100
   {
     id: 2,
-    label: "Price",
-    // minWidth: 170,
-    align: "center",
-  },
-  {
-    id: 3,
     label: "1h %",
     // minWidth: 170,
     align: "center",
   },
   {
-    id: 4,
+    id: 3,
     label: "6h %",
     // minWidth: 170,
     align: "center",
   },
   {
-    id: 5,
+    id: 4,
     label: "24h %",
     // minWidth: 170,
     align: "center",
   },
-  //   {
-  //     id: 6,
-  //     label: "Market Cap",
-  //     // minWidth: 170,
-  //     align: "right",
-  //   },
   {
-    id: 7,
+    id: 5,
     label: "Volume",
     // minWidth: 170,
     align: "center",
   },
   {
-    id: 8,
+    id: 6,
+    label: "Market Cap",
+    // minWidth: 170,
+    align: "center",
+  },
+  {
+    id: 7,
     label: "Circulating Supply",
     // minWidth: 170,
     align: "center",
   },
   {
-    id: 9,
+    id: 8,
     label: "Listing Date",
     // minWidth: 170,
     align: "center",

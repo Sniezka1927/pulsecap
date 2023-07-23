@@ -1,17 +1,17 @@
 import React from "react";
+import Portfolio from "../components/User/Portfolio/Portfolio";
 import Navbar from "../components/Navbar/Navbar";
-import About from "../components/About/About";
 import Footer from "../components/Footer/Footer";
 type Props = {};
 
-const AboutPage = (props: Props) => {
+const PortfolioPage = (props: Props) => {
   return (
     <React.Fragment>
       <Navbar />
-      <About />
+      <Portfolio />
       <Footer />
     </React.Fragment>
   );
 };
 
-export default AboutPage;
+export default PortfolioPage;
